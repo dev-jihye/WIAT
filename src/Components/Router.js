@@ -1,32 +1,27 @@
-import {
-  HashRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
-import Auth from "Routes/Auth";
-import Home from "Routes/Home";
-import Profile from "Routes/Profile";
-import Navigation from "./Navigation";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Home from "Components/Screens/Home";
+import Auth from "./Screens/Auth";
+import Error404 from "./Screens/Error404";
+import { ROUTE } from "constance";
+import { loggedInUserVar } from "apollo";
+import Blog from "./Screens/Blog";
+import CreatePost from "./Screens/CreatePost";
+import EditPost from "./Screens/EditPost";
 
-const AppRouter = ({ isLoggedIn }) => {
+const AppRouter = () => {
+  const loggedInUser = loggedInUserVar();
   return (
-    <Router>
-      {isLoggedIn && <Navigation />}
-      <Routes>
-        {isLoggedIn ? (
-          <>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/profile" element={<Profile />}></Route>
-          </>
-        ) : (
-          <>
-            <Route path="/" element={<Auth />}></Route>
-            <Route path="*" element={<Navigate replace to="/" />} />
-          </>
-        )}
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="*" element={<Error404 />} />
+      <Route
+        path={ROUTE.AUTH}
+        element={loggedInUser ? <Navigate replace to={ROUTE.HOME} /> : <Auth />}
+      />
+      <Route path={ROUTE.HOME} element={<Home />} />
+      <Route path={`${ROUTE.BLOG}/:blogId/*`} element={<Blog />} />
+      <Route path={ROUTE.CREATE_POST} element={<CreatePost />} />
+      <Route path={`/blog/:blogId/edit-post/:postId`} element={<EditPost />} />
+    </Routes>
   );
 };
 
