@@ -13,6 +13,10 @@ const Intro = styled.div`
 const Title = styled.h1`
   font-size: 32px;
   padding-top: 300px;
+  @media (max-width: 640px) {
+    font-size: 20px;
+    margin: 0 10px;
+  }
 `;
 
 const Btn = styled.button`

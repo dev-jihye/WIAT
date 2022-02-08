@@ -16,6 +16,9 @@ const Bg = styled.div`
   width: 100%;
   min-height: 160px;
   background-size: cover;
+  @media (max-width: 640px) {
+    min-height: 240px;
+  }
 `;
 
 const CreatedAt = styled.p`

@@ -20,6 +20,9 @@ const PostRow = styled.div`
   gap: 20px;
   padding: 20px 10px;
   @media (max-width: 640px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 480px) {
     display: block;
   }
 `;

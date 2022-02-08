@@ -182,7 +182,7 @@ const PostDetail = () => {
                   )}
                 </PostContainer>
               </PostHeader>
-              <img src={post.attachmentUrl} />
+              <img src={post.attachmentUrl} alt="post_image" />
               <PostText>{post.text}</PostText>
             </>
           )}

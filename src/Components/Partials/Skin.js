@@ -123,6 +123,7 @@ const Skin = ({ blogId, loggedInUser }) => {
         setSkin(DEFAULT_SKIN);
       }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [blogId]);
 
   return (

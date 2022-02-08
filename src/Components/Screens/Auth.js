@@ -52,7 +52,6 @@ const Login = () => {
       } else {
         data = await signInWithEmailAndPassword(authService, email, password);
       }
-      console.log(data);
     } catch (error) {
       setError(error.message);
     }

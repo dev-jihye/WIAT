@@ -6,7 +6,7 @@ const MainText = styled.p`
 `;
 
 const HomeBtn = styled.p`
-  background-color: #e9b972;
+  background-color: #f5b351;
   border-radius: 4px;
 `;
 
