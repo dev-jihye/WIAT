@@ -26,6 +26,15 @@ const PostHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 640px) {
+    display: block;
+  }
+`;
+
+const PostContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const Icon = styled.div`
@@ -37,6 +46,9 @@ const PostTitle = styled.h1`
   font-weight: bold;
   margin: 10px;
   flex-grow: 1;
+  @media (max-width: 640px) {
+    font-size: 16px;
+  }
 `;
 
 const PostDate = styled.p`
@@ -101,67 +113,74 @@ const PostDetail = () => {
           ) : (
             <>
               <PostHeader>
-                <Link to={`/blog/${post.creatorId}`}>
-                  <Icon>
-                    <FontAwesomeIcon icon={faChevronLeft} />
-                  </Icon>
-                </Link>
-                <PostTitle>{post.title}</PostTitle>
-                <PostDate>
-                  {new Date(post.createdAt).toISOString().slice(0, 10)}
-                </PostDate>
-                {loggedInUser && loggedInUser.uid === blogId && (
-                  <>
-                    <Menu as="div" className="relative inline-block text-left">
-                      <div>
-                        <Menu.Button className="inline-flex justify-center w-full font-medium ">
-                          <FontAwesomeIcon icon={faEllipsisH} />
-                        </Menu.Button>
-                      </div>
-
-                      <Transition
-                        as={Fragment}
-                        enter="transition ease-out duration-100"
-                        enterFrom="transform opacity-0 scale-95"
-                        enterTo="transform opacity-100 scale-100"
-                        leave="transition ease-in duration-75"
-                        leaveFrom="transform opacity-100 scale-100"
-                        leaveTo="transform opacity-0 scale-95"
+                <PostContainer>
+                  <Link to={`/blog/${post.creatorId}`}>
+                    <Icon>
+                      <FontAwesomeIcon icon={faChevronLeft} />
+                    </Icon>
+                  </Link>
+                  <PostTitle>{post.title}</PostTitle>
+                </PostContainer>
+                <PostContainer>
+                  <PostDate>
+                    {new Date(post.createdAt).toISOString().slice(0, 10)}
+                  </PostDate>
+                  {loggedInUser && loggedInUser.uid === blogId && (
+                    <>
+                      <Menu
+                        as="div"
+                        className="relative inline-block text-left"
                       >
-                        <Menu.Items className="origin-top-right absolute z-10 right-0 mt-2 w-20 text-center rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                          <div className="py-1">
-                            <Menu.Item>
-                              {({ active }) => (
-                                <Link
-                                  to={`/blog/${blogId}/edit-post/${postId}`}
-                                  className={classNames(
-                                    active
-                                      ? "bg-gray-100 text-gray-900"
-                                      : "text-gray-700",
-                                    "block px-4 py-2 text-sm"
-                                  )}
-                                >
-                                  수정
-                                </Link>
-                              )}
-                            </Menu.Item>
-                            <form>
+                        <div>
+                          <Menu.Button className="inline-flex justify-center w-full font-medium ">
+                            <FontAwesomeIcon icon={faEllipsisH} />
+                          </Menu.Button>
+                        </div>
+
+                        <Transition
+                          as={Fragment}
+                          enter="transition ease-out duration-100"
+                          enterFrom="transform opacity-0 scale-95"
+                          enterTo="transform opacity-100 scale-100"
+                          leave="transition ease-in duration-75"
+                          leaveFrom="transform opacity-100 scale-100"
+                          leaveTo="transform opacity-0 scale-95"
+                        >
+                          <Menu.Items className="origin-top-right absolute z-10 right-0 mt-2 w-20 text-center rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                            <div className="py-1">
                               <Menu.Item>
-                                <Btn
-                                  onClick={onDeleteClick}
-                                  type="submit"
-                                  className="block w-full px-4 py-2 text-sm text-center"
-                                >
-                                  삭제
-                                </Btn>
+                                {({ active }) => (
+                                  <Link
+                                    to={`/blog/${blogId}/edit-post/${postId}`}
+                                    className={classNames(
+                                      active
+                                        ? "bg-gray-100 text-gray-900"
+                                        : "text-gray-700",
+                                      "block px-4 py-2 text-sm"
+                                    )}
+                                  >
+                                    수정
+                                  </Link>
+                                )}
                               </Menu.Item>
-                            </form>
-                          </div>
-                        </Menu.Items>
-                      </Transition>
-                    </Menu>
-                  </>
-                )}
+                              <form>
+                                <Menu.Item>
+                                  <Btn
+                                    onClick={onDeleteClick}
+                                    type="submit"
+                                    className="block w-full px-4 py-2 text-sm text-center"
+                                  >
+                                    삭제
+                                  </Btn>
+                                </Menu.Item>
+                              </form>
+                            </div>
+                          </Menu.Items>
+                        </Transition>
+                      </Menu>
+                    </>
+                  )}
+                </PostContainer>
               </PostHeader>
               <img src={post.attachmentUrl} />
               <PostText>{post.text}</PostText>

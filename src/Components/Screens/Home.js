@@ -17,9 +17,9 @@ const Title = styled.h1`
 
 const Btn = styled.button`
   border-radius: 4px;
-  padding: 10px;
+  padding: 10px 15px;
   pointer-events: fill;
-  background-color: #e9b972;
+  background-color: #f5b351;
   margin-top: 50px;
 `;
 
@@ -35,7 +35,12 @@ const Home = ({}) => {
           </Btn>
         ) : (
           <Btn>
-            <Link to={`/blog/${loggedInUser.uid}`}>내 홈으로 가기</Link>
+            <Link
+              to={`/blog/${loggedInUser.uid}`}
+              style={{ verticalAlign: "sub" }}
+            >
+              내 홈으로 가기
+            </Link>
           </Btn>
         )}
       </Intro>

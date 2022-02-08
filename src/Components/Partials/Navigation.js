@@ -12,12 +12,12 @@ function classNames(...classes) {
 
 const Wrapper = styled.div`
   display: flex;
-  align-items: baseline;
+  align-items: center;
   padding: 10px 0;
 `;
 
 const Span = styled.span`
-  background-color: #e9b972;
+  background-color: #f5b351;
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -41,6 +41,9 @@ const Title = styled.h1`
   font-size: 26px;
   font-family: "Montserrat Alternates", sans-serif;
   margin: 0 40px 0 10px;
+  @media (max-width: 640px) {
+    font-size: 18px;
+  }
 `;
 
 const Btn = styled.button`

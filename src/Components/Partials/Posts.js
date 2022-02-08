@@ -19,6 +19,9 @@ const PostRow = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 20px;
   padding: 20px 10px;
+  @media (max-width: 640px) {
+    display: block;
+  }
 `;
 
 const Posts = ({ blogId }) => {

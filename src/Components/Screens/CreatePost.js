@@ -111,7 +111,7 @@ const CreatePost = () => {
       <form onSubmit={onSubmit} className="space-y-8 divide-y divide-gray-200">
         <div className="space-y-8 divide-y divide-gray-200 sm:space-y-5">
           <div>
-            <div className="mt-6 sm:mt-5 space-y-6 sm:space-y-5">
+            <div className="mt-6 sm:mt-5 space-y-6 sm:space-y-5 mx-4">
               <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                 <label
                   htmlFor="title"
@@ -207,11 +207,11 @@ const CreatePost = () => {
           </div>
         </div>
 
-        <div className="pt-5">
+        <div className="pt-5 mx-4">
           <div className="flex justify-end">
             <Link
               to={`/blog/${loggedInUser.uid}`}
-              className="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-0 focus:ring-offset-2 "
+              className="bg-gray-200 py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-0 focus:ring-offset-2 "
             >
               Cancel
             </Link>

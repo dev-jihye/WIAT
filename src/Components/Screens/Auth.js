@@ -75,9 +75,9 @@ const Login = () => {
     }
   };
   return (
-    <div className="min-h-full flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="flex flex-col justify-center min-h-full py-12 sm:px-6 lg:px-8">
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+        <div className="px-4 py-8 bg-white shadow sm:rounded-lg sm:px-10">
           <form className="space-y-6" method="POST" onSubmit={onSubmit}>
             <div>
               <label
@@ -95,7 +95,7 @@ const Login = () => {
                   required
                   onChange={onChange}
                   value={email}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 />
               </div>
             </div>
@@ -116,7 +116,7 @@ const Login = () => {
                   required
                   onChange={onChange}
                   value={password}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 />
               </div>
             </div>
@@ -124,13 +124,13 @@ const Login = () => {
             <div>
               <AuthButton
                 type="submit"
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 "
+                className="flex justify-center w-full px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 "
                 value={newAccount ? "회원가입" : "로그인"}
               />
             </div>
           </form>
           <ChangeAuth
-            className="mt-6 text-sm w-full flex justify-center"
+            className="flex justify-center w-full mt-6 text-sm"
             onClick={toggleAccount}
           >
             {newAccount ? "로그인" : "회원가입"}
@@ -142,18 +142,18 @@ const Login = () => {
                 <div className="w-full border-t border-gray-300" />
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-white text-gray-500">
+                <span className="px-2 text-gray-500 bg-white">
                   소셜 연동하기
                 </span>
               </div>
             </div>
 
-            <div className="mt-6 grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-3 mt-6">
               <div>
                 <button
                   onClick={onSocialClick}
                   name="google"
-                  className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-md font-medium text-gray-500 hover:bg-gray-50"
+                  className="inline-flex justify-center w-full px-4 py-2 font-medium text-gray-500 bg-white border border-gray-300 rounded-md shadow-sm text-md hover:bg-gray-50"
                 >
                   <span className="sr-only">Sign in with Google</span>
                   <FontAwesomeIcon icon={faGoogle} />
@@ -164,7 +164,7 @@ const Login = () => {
                 <button
                   onClick={onSocialClick}
                   name="facebook"
-                  className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-md font-medium text-gray-500 hover:bg-gray-50"
+                  className="inline-flex justify-center w-full px-4 py-2 font-medium text-gray-500 bg-white border border-gray-300 rounded-md shadow-sm text-md hover:bg-gray-50"
                 >
                   <span className="sr-only">Sign in with Facebook</span>
                   <FontAwesomeIcon icon={faFacebookSquare} />
