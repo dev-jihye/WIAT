@@ -3,7 +3,8 @@
 ## 🖥 Demo
 [https://young-quiz.herokuapp.com/](https://young-quiz.herokuapp.com/)<br><br>
 
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/59763645/156196239-c9c7a9e3-5c42-431f-abb2-75359952c4bc.gif)
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/59763645/156202903-a4e4ccca-746b-4c6a-aa06-3b08e696a921.gif)
+
 
 
 ## ⭐️ About The Project
