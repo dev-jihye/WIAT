@@ -4,13 +4,12 @@
 [https://wiat-jihye.herokuapp.com/](https://wiat-jihye.herokuapp.com/)<br><br>
 
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/59763645/156202903-a4e4ccca-746b-4c6a-aa06-3b08e696a921.gif)
-
-
-
+<br>
+<br>
 ## ⭐️ About The Project
 오늘 먹은 음식을 올리는 블로그 사이트입니다.
 <br>
-
+<br>
 ## 🛠 Built with
 * [React js](https://reactjs.org/)   
 * [Firebase](https://firebase.google.com/)
@@ -19,7 +18,7 @@
 * [React Router](https://reactrouter.com/)
 * [tailwindcss](https://tailwindcss.com/)
 <br>
-
+<br>
 ## Features
 * 회원가입
 * 글 작성
