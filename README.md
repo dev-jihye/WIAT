@@ -1,7 +1,7 @@
 # 🍽 What I Ate Today
 
 ## 🖥 Demo
-[https://young-quiz.herokuapp.com/](https://young-quiz.herokuapp.com/)<br><br>
+[https://wiat-jihye.herokuapp.com/](https://wiat-jihye.herokuapp.com/)<br><br>
 
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/59763645/156202903-a4e4ccca-746b-4c6a-aa06-3b08e696a921.gif)
 
